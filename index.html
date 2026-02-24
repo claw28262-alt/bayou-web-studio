@@ -348,6 +348,128 @@
             font-size: 0.9rem;
         }
         
+        /* Pricing */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .pricing-card {
+            background: var(--bg-lighter);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+            position: relative;
+            text-align: center;
+        }
+        
+        .pricing-card.popular {
+            transform: scale(1.05);
+            border-color: var(--primary);
+            background: linear-gradient(135deg, var(--bg-lighter), rgba(0, 102, 255, 0.05));
+            box-shadow: 0 10px 30px rgba(0, 102, 255, 0.2);
+        }
+        
+        .pricing-card.popular::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient);
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+        
+        .pricing-card.popular:hover {
+            transform: scale(1.05) translateY(-5px);
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gradient);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            box-shadow: var(--glow);
+        }
+        
+        .pricing-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+        
+        .pricing-price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .pricing-period {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+        
+        .pricing-features li {
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .pricing-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+        
+        .pricing-button {
+            display: inline-block;
+            background: var(--gradient);
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 102, 255, 0.3);
+        }
+        
+        .pricing-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 102, 255, 0.4);
+        }
+        
+        .pricing-tagline {
+            text-align: center;
+            color: var(--text-secondary);
+            margin-top: 2rem;
+            font-size: 1rem;
+        }
+
         /* Testimonials */
         .testimonials-grid {
             display: grid;
@@ -485,8 +607,17 @@
             
             .services-grid,
             .portfolio-grid,
+            .pricing-grid,
             .testimonials-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .pricing-card.popular {
+                transform: none;
+            }
+            
+            .pricing-card.popular:hover {
+                transform: translateY(-5px);
             }
             
             .steps {
@@ -517,6 +648,7 @@
                 <li><a href="#services">Services</a></li>
                 <li><a href="#how-it-works">Process</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#pricing">Pricing</a></li>
                 <li><a href="#testimonials">Reviews</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -620,6 +752,59 @@
                 </div>
             </div>
         </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="section" id="pricing">
+        <h2 class="section-title fade-in">Our Pricing</h2>
+        <p class="section-subtitle fade-in">Simple, transparent pricing for Houston businesses</p>
+        
+        <div class="pricing-grid">
+            <div class="pricing-card fade-in">
+                <h3 class="pricing-title">STARTER</h3>
+                <div class="pricing-price">$49</div>
+                <div class="pricing-period">per month</div>
+                <ul class="pricing-features">
+                    <li>Custom designed website</li>
+                    <li>Mobile responsive</li>
+                    <li>Google Maps + reviews integration</li>
+                    <li>Monthly content updates</li>
+                    <li>SSL + hosting included</li>
+                </ul>
+                <a href="mailto:bayouwebstudio@gmail.com?subject=Get Started - Starter Plan" class="pricing-button">Get Started</a>
+            </div>
+            
+            <div class="pricing-card popular fade-in">
+                <div class="popular-badge">Most Popular</div>
+                <h3 class="pricing-title">GROWTH</h3>
+                <div class="pricing-price">$99</div>
+                <div class="pricing-period">per month</div>
+                <ul class="pricing-features">
+                    <li>Everything in Starter</li>
+                    <li>Up to 50 products with checkout</li>
+                    <li>SEO optimization</li>
+                    <li>Social media integration</li>
+                    <li>Priority support</li>
+                </ul>
+                <a href="mailto:bayouwebstudio@gmail.com?subject=Get Started - Growth Plan" class="pricing-button">Get Started</a>
+            </div>
+            
+            <div class="pricing-card fade-in">
+                <h3 class="pricing-title">PREMIUM</h3>
+                <div class="pricing-price">$150</div>
+                <div class="pricing-period">per month</div>
+                <ul class="pricing-features">
+                    <li>Everything in Growth</li>
+                    <li>Bilingual (EN/ES)</li>
+                    <li>Google Ads management</li>
+                    <li>Monthly analytics report</li>
+                    <li>Unlimited updates</li>
+                </ul>
+                <a href="mailto:bayouwebstudio@gmail.com?subject=Get Started - Premium Plan" class="pricing-button">Get Started</a>
+            </div>
+        </div>
+        
+        <p class="pricing-tagline fade-in">No setup fees. No contracts. Cancel anytime.</p>
     </section>
 
     <!-- Testimonials Section -->
