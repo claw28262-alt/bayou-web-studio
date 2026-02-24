@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bayou Web Studio - Houston's Local Web Partner</title>
+    <title>Bayou Web Studios - Houston's Premium Web Design</title>
     <meta name="description" content="Premium web development and digital marketing services for Houston businesses. Custom websites, SEO, Google Ads, and competitive analysis by local experts.">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="Bayou Web Studio - Houston's Local Web Partner">
+    <meta property="og:title" content="Bayou Web Studios - Houston's Premium Web Design">
     <meta property="og:description" content="Premium web development and digital marketing services for Houston businesses. Custom websites, SEO, Google Ads, and competitive analysis by local experts.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://bayouwebstudio.com">
-    <meta property="og:image" content="https://bayouwebstudio.com/og-image.jpg">
+    <meta property="og:image" content="https://bayouwebstudio.com/logo.png">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Bayou Web Studio - Houston's Local Web Partner">
+    <meta name="twitter:title" content="Bayou Web Studios - Houston's Premium Web Design">
     <meta name="twitter:description" content="Premium web development and digital marketing services for Houston businesses.">
-    <meta name="twitter:image" content="https://bayouwebstudio.com/og-image.jpg">
+    <meta name="twitter:image" content="https://bayouwebstudio.com/logo.png">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌊</text></svg>">
+    <link rel="icon" type="image/png" href="./profile.png">
     
     <style>
         * {
@@ -30,8 +30,8 @@
         }
         
         :root {
-            --primary: #0066ff;
-            --accent: #00d4ff;
+            --primary: #c4873a;
+            --accent: #d4a665;
             --bg-dark: #0a0a0a;
             --bg-darker: #050505;
             --bg-lighter: #1a1a1a;
@@ -40,7 +40,7 @@
             --text-muted: #666666;
             --border: #2a2a2a;
             --gradient: linear-gradient(135deg, var(--primary), var(--accent));
-            --glow: 0 0 20px rgba(0, 102, 255, 0.3);
+            --glow: 0 0 20px rgba(196, 135, 58, 0.3);
         }
         
         html {
@@ -81,13 +81,10 @@
             align-items: center;
         }
         
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+        .logo img {
+            height: 40px;
+            max-width: 200px;
+            object-fit: contain;
         }
         
         .nav-links {
@@ -126,9 +123,9 @@
             right: 0;
             bottom: 0;
             background: 
-                radial-gradient(circle at 20% 80%, rgba(0, 102, 255, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, rgba(0, 102, 255, 0.05) 0%, transparent 50%);
+                radial-gradient(circle at 20% 80%, rgba(196, 135, 58, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(212, 166, 101, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(196, 135, 58, 0.05) 0%, transparent 50%);
             animation: float 20s infinite linear;
         }
         
@@ -178,7 +175,7 @@
         
         .cta-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0, 102, 255, 0.4);
+            box-shadow: 0 10px 30px rgba(196, 135, 58, 0.4);
         }
         
         /* Section Styles */
@@ -346,6 +343,19 @@
         .portfolio-description {
             color: var(--text-secondary);
             font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .portfolio-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .portfolio-link:hover {
+            color: var(--accent);
         }
         
         /* Pricing */
@@ -369,8 +379,8 @@
         .pricing-card.popular {
             transform: scale(1.05);
             border-color: var(--primary);
-            background: linear-gradient(135deg, var(--bg-lighter), rgba(0, 102, 255, 0.05));
-            box-shadow: 0 10px 30px rgba(0, 102, 255, 0.2);
+            background: linear-gradient(135deg, var(--bg-lighter), rgba(196, 135, 58, 0.05));
+            box-shadow: 0 10px 30px rgba(196, 135, 58, 0.2);
         }
         
         .pricing-card.popular::before {
@@ -455,12 +465,12 @@
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 102, 255, 0.3);
+            box-shadow: 0 5px 15px rgba(196, 135, 58, 0.3);
         }
         
         .pricing-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(0, 102, 255, 0.4);
+            box-shadow: 0 10px 25px rgba(196, 135, 58, 0.4);
         }
         
         .pricing-tagline {
@@ -624,6 +634,10 @@
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
+            
+            .logo img {
+                height: 32px;
+            }
         }
         
         /* Animations */
@@ -643,7 +657,9 @@
     <!-- Navigation -->
     <nav class="nav" id="nav">
         <div class="nav-content">
-            <div class="logo">Bayou Web Studio</div>
+            <div class="logo">
+                <img src="./logo.png" alt="Bayou Web Studios" />
+            </div>
             <ul class="nav-links">
                 <li><a href="#services">Services</a></li>
                 <li><a href="#how-it-works">Process</a></li>
@@ -658,8 +674,8 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content fade-in">
-            <h1>Houston's Local Web Partner</h1>
-            <p class="tagline">We Build. You Grow. Premium websites and digital marketing for Houston businesses.</p>
+            <h1>Space City's Premium Web Design</h1>
+            <p class="tagline">We Build. You Grow. Professional websites and digital marketing for Houston businesses.</p>
             <a href="#contact" class="cta-button">Get a Free Demo</a>
         </div>
     </section>
@@ -731,24 +747,54 @@
             <div class="portfolio-item fade-in">
                 <div class="portfolio-image">🎨</div>
                 <div class="portfolio-content">
-                    <h3 class="portfolio-title">Tattoo Temple Houston</h3>
-                    <p class="portfolio-description">Premium tattoo studio website with online booking and artist galleries. Mobile-first design for Houston's tattoo community.</p>
+                    <h3 class="portfolio-title">Jon West</h3>
+                    <p class="portfolio-description">Premium tattoo artist portfolio with booking system and image galleries. Clean, modern design showcasing artistic work.</p>
+                    <a href="https://bayouwebstudio.github.io/jonwest" class="portfolio-link" target="_blank">View Project →</a>
                 </div>
             </div>
             
             <div class="portfolio-item fade-in">
                 <div class="portfolio-image">⚡</div>
                 <div class="portfolio-content">
-                    <h3 class="portfolio-title">WescheTattoo.com</h3>
-                    <p class="portfolio-description">Personal brand website showcasing artistic portfolio with seamless user experience and mobile optimization.</p>
+                    <h3 class="portfolio-title">Alan Gutiérrez</h3>
+                    <p class="portfolio-description">Bilingual tattoo artist website with English/Spanish support. Responsive design optimized for mobile bookings.</p>
+                    <a href="https://bayouwebstudio.github.io/alangutierrez" class="portfolio-link" target="_blank">View Project →</a>
                 </div>
             </div>
             
             <div class="portfolio-item fade-in">
-                <div class="portfolio-image">🏠</div>
+                <div class="portfolio-image">🖤</div>
                 <div class="portfolio-content">
-                    <h3 class="portfolio-title">InkedHaus</h3>
-                    <p class="portfolio-description">Community platform connecting tattoo artists and enthusiasts. Custom features and social integration.</p>
+                    <h3 class="portfolio-title">Grahmatter</h3>
+                    <p class="portfolio-description">Dark, edgy design for tattoo artist specializing in blackwork. Gallery-focused layout with smooth animations.</p>
+                    <a href="https://bayouwebstudio.github.io/grahmatter" class="portfolio-link" target="_blank">View Project →</a>
+                </div>
+            </div>
+            
+            <div class="portfolio-item fade-in">
+                <div class="portfolio-image">🔥</div>
+                <div class="portfolio-content">
+                    <h3 class="portfolio-title">Suttoos</h3>
+                    <p class="portfolio-description">Bold tattoo studio website with vibrant design and integrated social media. Optimized for Houston market.</p>
+                    <a href="https://bayouwebstudio.github.io/suttoos" class="portfolio-link" target="_blank">View Project →</a>
+                </div>
+            </div>
+            
+            <div class="portfolio-item fade-in">
+                <div class="portfolio-image">💎</div>
+                <div class="portfolio-content">
+                    <h3 class="portfolio-title">JT Fisher</h3>
+                    <p class="portfolio-description">Elegant crystal healing and metaphysical shop with e-commerce integration. Spiritual aesthetic with modern functionality.</p>
+                    <a href="https://bayouwebstudio.github.io/jtfisher" class="portfolio-link" target="_blank">View Project →</a>
+                </div>
+            </div>
+            
+            <div class="portfolio-item fade-in">
+                <div class="portfolio-image">🎭</div>
+                <div class="portfolio-content">
+                    <h3 class="portfolio-title">Fabrizio Santini</h3>
+                    <p class="portfolio-description">Professional actor portfolio with video integration, resume display, and casting director friendly layout.</p>
+                    <a href="https://bayouwebstudio.github.io/fabriziosantini" class="portfolio-link" target="_blank">View Project →</a>
                 </div>
             </div>
         </div>
@@ -761,27 +807,27 @@
         
         <div class="pricing-grid">
             <div class="pricing-card fade-in">
-                <h3 class="pricing-title">STARTER</h3>
+                <h3 class="pricing-title">Starter</h3>
                 <div class="pricing-price">$49</div>
                 <div class="pricing-period">per month</div>
                 <ul class="pricing-features">
-                    <li>Custom designed website</li>
+                    <li>Custom website</li>
                     <li>Mobile responsive</li>
-                    <li>Google Maps + reviews integration</li>
-                    <li>Monthly content updates</li>
-                    <li>SSL + hosting included</li>
+                    <li>Google Maps + reviews</li>
+                    <li>Monthly updates</li>
+                    <li>SSL + hosting</li>
                 </ul>
                 <a href="mailto:bayouwebstudio@gmail.com?subject=Get Started - Starter Plan" class="pricing-button">Get Started</a>
             </div>
             
             <div class="pricing-card popular fade-in">
                 <div class="popular-badge">Most Popular</div>
-                <h3 class="pricing-title">GROWTH</h3>
+                <h3 class="pricing-title">Growth</h3>
                 <div class="pricing-price">$99</div>
                 <div class="pricing-period">per month</div>
                 <ul class="pricing-features">
                     <li>Everything in Starter</li>
-                    <li>Up to 50 products with checkout</li>
+                    <li>Sell prints/deposits/gift cards from your site</li>
                     <li>SEO optimization</li>
                     <li>Social media integration</li>
                     <li>Priority support</li>
@@ -790,7 +836,7 @@
             </div>
             
             <div class="pricing-card fade-in">
-                <h3 class="pricing-title">PREMIUM</h3>
+                <h3 class="pricing-title">Premium</h3>
                 <div class="pricing-price">$150</div>
                 <div class="pricing-period">per month</div>
                 <ul class="pricing-features">
@@ -814,7 +860,7 @@
         
         <div class="testimonials-grid">
             <div class="testimonial fade-in">
-                <p class="testimonial-text">Working with Bayou Web Studio transformed our online presence. Professional, fast, and they really understand Houston businesses.</p>
+                <p class="testimonial-text">Working with Bayou Web Studios transformed our online presence. Professional, fast, and they really understand Houston businesses.</p>
                 <div class="testimonial-author">Sarah Martinez</div>
                 <div class="testimonial-company">Houston Local Restaurant</div>
             </div>
@@ -855,7 +901,7 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <p class="footer-text">&copy; 2024 Bayou Web Studio. Houston, TX. Built with ❤️ for local businesses.</p>
+        <p class="footer-text">&copy; 2025 Bayou Web Studios. Houston, TX. Built with ❤️ for local businesses.</p>
     </footer>
 
     <script>
