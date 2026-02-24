@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bayou Web Studio - Houston's Local Web Partner</title>
+    <meta name="description" content="Premium web development and digital marketing services for Houston businesses. Custom websites, SEO, Google Ads, and competitive analysis by local experts.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Bayou Web Studio - Houston's Local Web Partner">
+    <meta property="og:description" content="Premium web development and digital marketing services for Houston businesses. Custom websites, SEO, Google Ads, and competitive analysis by local experts.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bayouwebstudio.com">
+    <meta property="og:image" content="https://bayouwebstudio.com/og-image.jpg">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bayou Web Studio - Houston's Local Web Partner">
+    <meta name="twitter:description" content="Premium web development and digital marketing services for Houston businesses.">
+    <meta name="twitter:image" content="https://bayouwebstudio.com/og-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌊</text></svg>">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #0066ff;
+            --accent: #00d4ff;
+            --bg-dark: #0a0a0a;
+            --bg-darker: #050505;
+            --bg-lighter: #1a1a1a;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+            --text-muted: #666666;
+            --border: #2a2a2a;
+            --gradient: linear-gradient(135deg, var(--primary), var(--accent));
+            --glow: 0 0 20px rgba(0, 102, 255, 0.3);
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+        
+        .nav.scrolled {
+            background: rgba(10, 10, 10, 0.98);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            background: var(--bg-darker);
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(0, 102, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(0, 102, 255, 0.05) 0%, transparent 50%);
+            animation: float 20s infinite linear;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(20px, -20px) rotate(2deg); }
+            66% { transform: translate(-10px, 10px) rotate(-1deg); }
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 0 2rem;
+        }
+        
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1.2;
+        }
+        
+        .tagline {
+            font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: var(--gradient);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: var(--glow);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 102, 255, 0.4);
+        }
+        
+        /* Section Styles */
+        .section {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 3rem;
+            color: var(--text-primary);
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 4rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .service-card {
+            background: var(--bg-lighter);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+        
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+        
+        .service-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        .service-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        /* How It Works */
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        
+        .step {
+            text-align: center;
+            position: relative;
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--gradient);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 1rem;
+            box-shadow: var(--glow);
+        }
+        
+        .step-title {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        .step-description {
+            color: var(--text-secondary);
+        }
+        
+        /* Portfolio */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .portfolio-item {
+            background: var(--bg-lighter);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .portfolio-image {
+            width: 100%;
+            height: 200px;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            opacity: 0.8;
+        }
+        
+        .portfolio-content {
+            padding: 1.5rem;
+        }
+        
+        .portfolio-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+        
+        .portfolio-description {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .testimonial {
+            background: var(--bg-lighter);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid var(--border);
+            position: relative;
+        }
+        
+        .testimonial::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 4rem;
+            color: var(--primary);
+            opacity: 0.5;
+        }
+        
+        .testimonial-text {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+        
+        .testimonial-company {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background: var(--bg-darker);
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+        
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .contact-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .contact-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+        
+        .contact-info {
+            margin: 2rem 0;
+        }
+        
+        .contact-email {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .social-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            padding: 0.5rem;
+            border-radius: 50%;
+            border: 1px solid var(--border);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            color: var(--primary);
+            border-color: var(--primary);
+            box-shadow: var(--glow);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--bg-darker);
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid var(--border);
+        }
+        
+        .footer-text {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero {
+                padding: 2rem 0;
+            }
+            
+            .section {
+                padding: 4rem 1rem;
+            }
+            
+            .services-grid,
+            .portfolio-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .steps {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+        
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-content">
+            <div class="logo">Bayou Web Studio</div>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#how-it-works">Process</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content fade-in">
+            <h1>Houston's Local Web Partner</h1>
+            <p class="tagline">We Build. You Grow. Premium websites and digital marketing for Houston businesses.</p>
+            <a href="#contact" class="cta-button">Get a Free Demo</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section" id="services">
+        <h2 class="section-title fade-in">Our Services</h2>
+        <p class="section-subtitle fade-in">Everything your business needs to dominate online in Houston</p>
+        
+        <div class="services-grid">
+            <div class="service-card fade-in">
+                <div class="service-icon">🚀</div>
+                <h3 class="service-title">Custom Websites</h3>
+                <p class="service-description">Premium, mobile-responsive websites that convert visitors into customers. Built fast, built right, built to last.</p>
+            </div>
+            
+            <div class="service-card fade-in">
+                <div class="service-icon">📈</div>
+                <h3 class="service-title">Google Ads Management</h3>
+                <p class="service-description">Drive qualified leads with expertly managed Google Ads campaigns. We know Houston, we know your customers.</p>
+            </div>
+            
+            <div class="service-card fade-in">
+                <div class="service-icon">🔍</div>
+                <h3 class="service-title">SEO Optimization</h3>
+                <p class="service-description">Dominate local search results. Get found when Houston customers are looking for what you offer.</p>
+            </div>
+            
+            <div class="service-card fade-in">
+                <div class="service-icon">📊</div>
+                <h3 class="service-title">Competitive Analysis</h3>
+                <p class="service-description">Know exactly what your competitors are doing online. Stay ahead with data-driven insights.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="section" id="how-it-works">
+        <h2 class="section-title fade-in">How It Works</h2>
+        <p class="section-subtitle fade-in">Simple process, premium results</p>
+        
+        <div class="steps">
+            <div class="step fade-in">
+                <div class="step-number">1</div>
+                <h3 class="step-title">Discovery Call</h3>
+                <p class="step-description">We understand your business, goals, and target customers. Free consultation, no pressure.</p>
+            </div>
+            
+            <div class="step fade-in">
+                <div class="step-number">2</div>
+                <h3 class="step-title">Strategy & Build</h3>
+                <p class="step-description">Custom strategy and premium website built specifically for your Houston business and customers.</p>
+            </div>
+            
+            <div class="step fade-in">
+                <div class="step-number">3</div>
+                <h3 class="step-title">Launch & Grow</h3>
+                <p class="step-description">Go live with confidence. Ongoing optimization to drive more leads and grow your business.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="section" id="portfolio">
+        <h2 class="section-title fade-in">Our Work</h2>
+        <p class="section-subtitle fade-in">Premium websites that drive real results for Houston businesses</p>
+        
+        <div class="portfolio-grid">
+            <div class="portfolio-item fade-in">
+                <div class="portfolio-image">🎨</div>
+                <div class="portfolio-content">
+                    <h3 class="portfolio-title">Tattoo Temple Houston</h3>
+                    <p class="portfolio-description">Premium tattoo studio website with online booking and artist galleries. Mobile-first design for Houston's tattoo community.</p>
+                </div>
+            </div>
+            
+            <div class="portfolio-item fade-in">
+                <div class="portfolio-image">⚡</div>
+                <div class="portfolio-content">
+                    <h3 class="portfolio-title">WescheTattoo.com</h3>
+                    <p class="portfolio-description">Personal brand website showcasing artistic portfolio with seamless user experience and mobile optimization.</p>
+                </div>
+            </div>
+            
+            <div class="portfolio-item fade-in">
+                <div class="portfolio-image">🏠</div>
+                <div class="portfolio-content">
+                    <h3 class="portfolio-title">InkedHaus</h3>
+                    <p class="portfolio-description">Community platform connecting tattoo artists and enthusiasts. Custom features and social integration.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section" id="testimonials">
+        <h2 class="section-title fade-in">What Our Clients Say</h2>
+        <p class="section-subtitle fade-in">Real results for real Houston businesses</p>
+        
+        <div class="testimonials-grid">
+            <div class="testimonial fade-in">
+                <p class="testimonial-text">Working with Bayou Web Studio transformed our online presence. Professional, fast, and they really understand Houston businesses.</p>
+                <div class="testimonial-author">Sarah Martinez</div>
+                <div class="testimonial-company">Houston Local Restaurant</div>
+            </div>
+            
+            <div class="testimonial fade-in">
+                <p class="testimonial-text">Our website looks incredible and our Google Ads are finally driving real customers. Best investment we've made for our business.</p>
+                <div class="testimonial-author">Mike Johnson</div>
+                <div class="testimonial-company">Houston Auto Repair</div>
+            </div>
+            
+            <div class="testimonial fade-in">
+                <p class="testimonial-text">They don't just build websites, they understand business. Our leads have tripled since working with them.</p>
+                <div class="testimonial-author">Lisa Chen</div>
+                <div class="testimonial-company">Houston Law Firm</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-content fade-in">
+            <h2 class="contact-title">Ready to Grow?</h2>
+            <p class="contact-subtitle">Let's build something amazing for your Houston business</p>
+            
+            <div class="contact-info">
+                <a href="mailto:bayouwebstudio@gmail.com" class="contact-email">bayouwebstudio@gmail.com</a>
+                
+                <div class="social-links">
+                    <a href="https://instagram.com/bayouwebstudio" class="social-link" title="Instagram">📷</a>
+                    <a href="https://tiktok.com/@bayouwebstudio" class="social-link" title="TikTok">🎵</a>
+                    <a href="https://x.com/bayouwebstudio" class="social-link" title="X (Twitter)">🐦</a>
+                </div>
+            </div>
+            
+            <a href="mailto:bayouwebstudio@gmail.com?subject=Free Demo Request" class="cta-button">Get a Free Demo</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p class="footer-text">&copy; 2024 Bayou Web Studio. Houston, TX. Built with ❤️ for local businesses.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Navigation background on scroll
+        window.addEventListener('scroll', function() {
+            const nav = document.getElementById('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Make hero content visible immediately
+        document.querySelector('.hero .fade-in').classList.add('visible');
+    </script>
+</body>
+</html>
